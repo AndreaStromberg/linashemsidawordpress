@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lina Malm</title>
+    <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
+
+
 
     <!-- ikoner -->
     <script src="https://kit.fontawesome.com/57d02b356d.js" crossorigin="anonymous"></script>
@@ -22,17 +24,21 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <?php wp_head(); ?>
 
     <!-- Scripts -->
     <script src="expandableMenu.js" defer></script>
+
+
 
 </head>
 
 <body>
 
     <header class="site-header">
-        <a href="index.html" class="logotype">Lina Malm</a>
+        <a href="<?php echo home_url('/') ?>" class="logotype">Lina Malm</a>
+
+
 
         <nav class="menu">
             <ul class="menu__menulist">
@@ -77,6 +83,15 @@
                 <li class="hamburgermenu-expanded__listitem"><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
+
+
+        $args = array(
+
+
+        );
+
+
+
     </header>
 
 
@@ -84,7 +99,7 @@
 
         <div class="hero">
             <figure class="hero__image">
-                <img src="images/herobildMittemellanbred.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/herobildMittemellanbred.jpg" alt="">
             </figure>
         </div>
 
@@ -111,15 +126,15 @@
 
             <div class="gallery">
                 <figure class="gallery__image">
-                    <img src="images/bild1.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/bild1.jpg" alt="">
                 </figure>
 
                 <figure class="gallery__image">
-                    <img src="images/bild2.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/bild2.jpg" alt="">
                 </figure>
 
                 <figure class="gallery__image">
-                    <img src="images/bild3.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/bild3.jpg" alt="">
                 </figure>
 
                 <div class="gallery__text-area">
@@ -147,7 +162,7 @@
 
                 <article class="card">
                     <figure class="card__image">
-                        <img src="images/bakgrundsbild.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/bakgrundsbild.jpg" alt="">
                     </figure>
 
                     <div class="card__content">
@@ -169,7 +184,7 @@
 
                 <article class="card">
                     <figure class="card__image">
-                        <img src="images/bild5.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/bild5.jpg" alt="">
                     </figure>
 
                     <div class="card__content">
@@ -191,7 +206,7 @@
 
                 <article class="card">
                     <figure class="card__image">
-                        <img src="images/herobild.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/herobild.jpg" alt="">
                     </figure>
 
                     <div class="card__content">
@@ -224,7 +239,7 @@
 
                     <div class="project__card">
                         <figure class="project__card__image">
-                            <img src="images/nalle.jpg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/nalle.jpg" alt="">
                         </figure>
 
                         <h3 class="project__card__title">Nallen Tralle</h3>
@@ -234,7 +249,7 @@
 
                     <div class="project__card">
                         <figure class="project__card__image">
-                            <img src="images/barn.jpg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/barn.jpg" alt="">
                         </figure>
 
                         <h3 class="project__card__title">August och Lotta</h3>
@@ -244,7 +259,7 @@
 
                     <div class="project__card">
                         <figure class="project__card__image">
-                            <img src="images/tantOchKatt.jpg" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/tantOchKatt.jpg" alt="">
                         </figure>
 
                         <h3 class="project__card__title">Ingegerd och Hilma</h3>
@@ -275,6 +290,8 @@
         </footer>
 
     </div>
+
+    <?php wp_footer(); ?>
 
 </body>
 
