@@ -84,11 +84,21 @@
             </ul>
         </nav>
 
-
+        <?php
         $args = array(
-
+            'theme_location' => 'main_menu',
+            'container' => 'nav',
+            'container_class' => 'menu',
+            'menu_class' => 'menu__list'
 
         );
+
+        wp_nav_menu($args);
+
+
+        ?>
+
+
 
 
 
