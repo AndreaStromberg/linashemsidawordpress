@@ -40,8 +40,8 @@
 
 
 
-        <!-- <nav class="menu">
-            <ul class="menu__menulist">
+        <nav class="menu">
+            <!-- <ul class="menu__menulist">
                 <li class="menu__list-item menu__list-item--current"><a href="index.html">Hem</a></li>
                 <li class="menu__list-item"><a href="illustrationer.html">Illustrationer</a></li>
                 <li class="menu__list-item menu__list-item--expandable">På gång
@@ -54,7 +54,19 @@
                 </li>
                 <li class="menu__list-item"><a href="om-mig.html">Om mig</a></li>
                 <li class="menu__list-item"><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+            </ul> -->
+
+            <?php
+            $args = array(
+                'theme_location' => 'main_menu',
+                'container' => 'nav',
+                'container_class' => 'menu',
+                'menu_class' => 'menu__menulist'
+
+            );
+
+            wp_nav_menu($args);
+            ?>
 
             <button class="hamburger-menu">
                 <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,21 +94,23 @@
                 <li class="hamburgermenu-expanded__listitem"><a href="om-mig.html">Om mig</a></li>
                 <li class="hamburgermenu-expanded__listitem"><a href="kontakt.html">Kontakt</a></li>
             </ul>
-        </nav> -->
 
-        <?php
-        $args = array(
-            'theme_location' => 'main_menu',
-            'container' => 'nav',
-            'container_class' => 'menu',
-            'menu_class' => 'menu__menulist'
-
-        );
-
-        wp_nav_menu($args);
+            <?php
+            $args = array(
+                'theme_location' => 'hamburgermenu-expanded',
+                'container' => 'ul',
+                'menu_class' => 'hamburgermenu-expanded'
 
 
-        ?>
+            );
+
+            wp_nav_menu($args);
+
+            ?>
+
+        </nav>
+
+
 
 
 

@@ -19,7 +19,9 @@ add_action('wp_enqueue_scripts', 'linashemsida_styles_and_scripts');
 function linashemsida_register_menus()
 {
     register_nav_menus(array(
-        'main_menu' => 'Huvudmeny'
+        'main_menu' => 'Huvudmeny',
+        'pagang_hover_menu' => 'På gång - hovermeny',
+        'expandable_hamburger_menu' => 'Hamburgermeny'
     ));
 }
 
