@@ -164,6 +164,10 @@ a {
       position: relative;
     }
 
+    &:hover {
+      color: var(--mustard-yellow);
+    }
+
     .menu__sub {
       display: none;
       position: absolute;

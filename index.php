@@ -40,7 +40,7 @@
 
 
 
-        <nav class="menu">
+        <!-- <nav class="menu">
             <ul class="menu__menulist">
                 <li class="menu__list-item menu__list-item--current"><a href="index.html">Hem</a></li>
                 <li class="menu__list-item"><a href="illustrationer.html">Illustrationer</a></li>
@@ -82,14 +82,14 @@
                 <li class="hamburgermenu-expanded__listitem"><a href="om-mig.html">Om mig</a></li>
                 <li class="hamburgermenu-expanded__listitem"><a href="kontakt.html">Kontakt</a></li>
             </ul>
-        </nav>
+        </nav> -->
 
         <?php
         $args = array(
             'theme_location' => 'main_menu',
             'container' => 'nav',
             'container_class' => 'menu',
-            'menu_class' => 'menu__list'
+            'menu_class' => 'menu__menulist'
 
         );
 
