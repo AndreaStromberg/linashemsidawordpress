@@ -68,74 +68,46 @@ get_header(); ?>
 
         <div class="articles">
 
-            <article class="card">
-                <figure class="card__image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/bakgrundsbild.jpg" alt="">
-                </figure>
+            <?php
 
-                <div class="card__content">
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3
+            );
 
-                    <div class="card__text">
-
-                        <h3 class=" card__heading">Energihaveriet</h3>
-
-                        <p class="card__exerpt">Detta är en text jag skrev för några år sedan. Det är en prosalyrisk
-                            text
-                            som
-                            handlar om energi.</p>
-                    </div>
-
-                    <a href="" class="button">Till texten</a>
-
-                </div>
-            </article>
-
-            <article class="card">
-                <figure class="card__image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/bild5.jpg" alt="">
-                </figure>
-
-                <div class="card__content">
-
-                    <div class="card__text">
-
-                        <h3 class="card__heading">Littfest 2025</h3>
-
-                        <p class="card__exerpt">Detta är en text som handlar om mitt besök på bokmässan Littfest i
-                            Umeå
-                            2025. En
-                            mycket trevlig tillställning med många intressanta föreläsare. </p>
-                    </div>
-
-                    <a href="" class="button">Till texten</a>
-
-                </div>
-            </article>
-
-            <article class="card">
-                <figure class="card__image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/herobild.jpg" alt="">
-                </figure>
-
-                <div class="card__content">
-
-                    <div class="card__text">
+            $query = new WP_Query($args);
 
 
-                        <h3 class="card__heading">Nytt projekt på gång</h3>
+            if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-                        <p class="card__exerpt">Jag har glädjen att berätta för er att jag en tid arbetat på ett
-                            alldeles
-                            nytt
-                            projekt som är ett samarbete med kommunerna Härnösand, Sundsvall och Timrå samt min
-                            illustratörskollega
-                            Lilly Labrador</p>
-                    </div>
+                    <!-- Kort 1 -->
+                    <a href="<?php the_permalink(); ?>">
 
-                    <a href="" class="button">Läs mer</a>
-                </div>
+                        <article class="card">
+                            <figure class="card__image">
+                                <?php the_post_thumbnail('large'); ?>
+                            </figure>
 
-            </article>
+
+                            <div class="card__content">
+
+                                <div class="card__text">
+
+                                    <h3 class=" card__heading"><?php the_title(); ?></h3>
+
+                                    <p class="card__exerpt"><?php the_excerpt(); ?></p>
+                                </div>
+
+                                <a href="<?php the_permalink(); ?>" class="button">Läs mer</a>
+
+
+                            </div>
+                        </article>
+                    </a>
+
+            <?php endwhile;
+                wp_reset_postdata();
+            endif; ?>
 
         </div>
 
