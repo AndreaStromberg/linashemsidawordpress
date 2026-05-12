@@ -34,6 +34,8 @@ figure {
 
 img {
   max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 /* TYPOGRAFI */
@@ -130,8 +132,6 @@ a {
   height: 100px;
   padding: 0 3rem;
   .logotype {
-    /* font-family: "Ga Maamli", sans-serif; */
-    /* font-family: "Great Vibes", cursive; */
     font-family: "Mynerve", cursive;
 
     font-size: 3rem;
@@ -151,7 +151,7 @@ a {
   }
 
   .menu__menulist,
-  a {
+  #menu-huvudmeny {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -160,7 +160,9 @@ a {
     font-size: 1.25rem;
     color: var(--dark-grey);
 
-    .menu__list-item--expandable {
+    .menu__list-item--expandable,
+    .menu-item-has-children,
+    .menu-item-has-children > a {
       position: relative;
     }
 
@@ -168,7 +170,8 @@ a {
       color: var(--mustard-yellow);
     }
 
-    .menu__sub {
+    .menu__sub,
+    .sub_menu {
       display: none;
       position: absolute;
       top: 100%;
@@ -184,7 +187,8 @@ a {
       }
     }
 
-    .menu__list-item--expandable:hover {
+    .menu__list-item--expandable:hover,
+    .menu-item-has-children:hover {
       .menu__sub {
         display: block;
       }

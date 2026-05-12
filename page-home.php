@@ -1,10 +1,13 @@
-<?php get_header(); ?>
+<?php
+// Template Name: Home
+
+get_header(); ?>
 
 <div class="container">
 
     <div class="hero">
         <figure class="hero__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/herobildMittemellanbred.jpg" alt="">
+            <?php the_post_thumbnail(); ?>
         </figure>
     </div>
 
@@ -186,11 +189,3 @@
 
 
     <?php get_footer(); ?>
-
-</div>
-
-<?php wp_footer(); ?>
-
-</body>
-
-</html>

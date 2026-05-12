@@ -1,4 +1,6 @@
 const expandableMenu = () => {
+  console.log("laddat in filen expandableMenu.js")
+
   // Hämta in element från DOM
   const menuButton = document.querySelector(".hamburger-menu")
   const expandedMenu = document.querySelector(".hamburgermenu-expanded")
