@@ -12,12 +12,22 @@ get_header(); ?>
     </div>
 
     <div class="ingress-test">
-        <div class="ingress">
-            <h1>Välkommen till Linas skrivliv!</h1>
-            <p class="ingress__text">Jag är en aspirerande författare och här kan du läsa mer om mina projekt, min
-                arbetsprocess och ta del av mina illustrationer som jag skapar till dessa projekt.
-            </p>
-        </div>
+
+
+
+        <!-- Ingress -->
+        <?php
+        $ingress = get_field('ingress');
+        if ($ingress) :
+
+        ?>
+            <div class="ingress">
+                <h1><?php echo $ingress['rubrik'] ?></h1>
+                <p class="ingress__text"><?php echo $ingress['ingresstext'] ?>
+                </p>
+            </div>
+
+        <?php endif; ?>
 
         <section class="test">
 
