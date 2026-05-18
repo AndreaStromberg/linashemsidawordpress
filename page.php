@@ -5,11 +5,18 @@
 
         <h1 class="page__title"><?php the_title(); ?></h1>
         <!-- <h1>Nallen Tralle</h1> -->
-        <figure>
-            <img src="images/nalle.jpg" alt="">
-        </figure>
 
-        <p class="single-ingress">
+        <?php if (has_post_thumbnail()) : ?>
+            <figure>
+                <!-- <img src="images/nalle.jpg" alt=""> -->
+                <?php the_post_thumbnail(); ?>
+            </figure>
+        <?php endif; ?>
+
+        <div class="page__content">
+            <?php the_content(); ?>
+        </div>
+        <!-- <p class="single-ingress">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni adipisci perferendis quibusdam vero
             labore dolorem cum officia at optio, facilis reprehenderit temporibus ducimus suscipit cupiditate
             corporis sed sit enim maxime.
@@ -35,7 +42,7 @@
             quasi iusto.
             Similique neque magnam ea illo tenetur, provident architecto, obcaecati aliquam nobis sit sapiente
             corrupti facilis dolorem corporis magni numquam quasi ab? Sequi delectus obcaecati dicta praesentium
-            quod architecto minima officiis!</p>
+            quod architecto minima officiis!</p> -->
 
     </div>
 

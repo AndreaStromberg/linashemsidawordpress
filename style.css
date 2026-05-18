@@ -951,6 +951,10 @@ footer {
     font-size: 24px;
     font-style: italic;
   }
+
+  .single-content__text {
+    min-height: 50vh;
+  }
 }
 
 .footer__subpage {
