@@ -81,18 +81,19 @@ get_header(); ?>
     <div class="backgroundforest">
 
 
+        <h2>hej hej</h2>
 
         <div class="articles">
 
             <?php
 
             $args = array(
+                'category_name' => 'varldar-och-karaktarer',
                 'post_type' => 'post',
                 'posts_per_page' => 3
             );
 
             $query = new WP_Query($args);
-
 
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
