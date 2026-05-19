@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 
-
-
     <!-- ikoner -->
     <script src="https://kit.fontawesome.com/57d02b356d.js" crossorigin="anonymous"></script>
 
@@ -29,16 +27,12 @@
     <!-- Scripts -->
     <!-- <script src="expandableMenu.js" defer></script> -->
 
-
-
 </head>
 
 <body>
 
     <header class="site-header">
         <a href="<?php echo home_url('/') ?>" class="logotype">Lina Malm</a>
-
-
 
         <nav class="menu">
             <!-- <ul class="menu__menulist">
@@ -109,11 +103,5 @@
             ?>
 
         </nav>
-
-
-
-
-
-
 
     </header>

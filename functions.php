@@ -39,6 +39,7 @@ function include_scripts()
 }
 add_action('wp_enqueue_scripts', 'include_scripts');
 
+
 // function my_custom_head_code()
 // {
 //     echo '<meta name="author" content="Your Name">';

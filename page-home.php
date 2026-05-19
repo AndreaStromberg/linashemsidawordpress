@@ -37,6 +37,12 @@ get_header(); ?>
         </section>
     </div>
 
+    <h2>hopp hopp</h2>
+    <?php
+    foreach (get_categories() as $category) :
+        echo $category->name;
+    endforeach;
+    ?>
 
 
     <div class="gallery-and-above-background-forest">

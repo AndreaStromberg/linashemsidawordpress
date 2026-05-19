@@ -14,13 +14,13 @@ const expandableMenu = () => {
   }
 
   //   Funktion för att stänga utfälld meny när man trycker på krysset
-  const closeExpandableMenu = () => {
-    expandedMenu.classList.remove("visible")
-  }
+  // const closeExpandableMenu = () => {
+  //   expandedMenu.classList.remove("visible")
+  // }
 
   // Eventlyssnare
   menuButton.addEventListener("click", toggleExpandableMenu)
-  closeButton.addEventListener("click", closeExpandableMenu)
+  // closeButton.addEventListener("click", closeExpandableMenu)
 }
 
 expandableMenu()
