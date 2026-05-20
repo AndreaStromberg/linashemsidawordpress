@@ -409,6 +409,15 @@ a {
   padding: 15rem 4rem 10rem;
   margin-top: -7rem;
 
+  /* .gallery__image,
+  .gallery__text-area {
+    aspect-ratio: 1/1.414;
+    img {
+      object-fit: cover;
+      overflow: hidden;
+    }
+  } */
+
   .gallery__text-area {
     padding: 1rem;
     display: flex;
