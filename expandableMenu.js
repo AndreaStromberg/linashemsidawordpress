@@ -10,17 +10,21 @@ const expandableMenu = () => {
   //   Funktion för att toggla utfälld meny
   const toggleExpandableMenu = () => {
     console.log("Klickat på knappen...")
-    expandedMenu.classList.toggle("visible")
+    expandedMenu.classList.add("visible")
+    menuButton.classList.add("unvisible")
+    closeButton.classList.add("visible")
   }
 
-  //   Funktion för att stänga utfälld meny när man trycker på krysset
-  // const closeExpandableMenu = () => {
-  //   expandedMenu.classList.remove("visible")
-  // }
+  // Funktion för att stänga utfälld meny när man trycker på krysset
+  const closeExpandableMenu = () => {
+    expandedMenu.classList.remove("visible")
+    menuButton.classList.remove("unvisible")
+    closeButton.classList.remove("visible")
+  }
 
   // Eventlyssnare
   menuButton.addEventListener("click", toggleExpandableMenu)
-  // closeButton.addEventListener("click", closeExpandableMenu)
+  closeButton.addEventListener("click", closeExpandableMenu)
 }
 
 expandableMenu()

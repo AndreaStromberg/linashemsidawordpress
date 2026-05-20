@@ -70,6 +70,10 @@
                 </svg>
 
             </button>
+
+            <button class="close-button">
+                X
+            </button>
             <!-- 
             <ul class="hamburgermenu-expanded">
                 <li class="hamburgermenu-expanded__listitem close-item"><button class="close-button">X</button></li>

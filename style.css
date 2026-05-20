@@ -207,6 +207,25 @@ a {
     border: 0;
     background: none;
     display: none;
+
+    &.unvisible {
+      display: none;
+    }
+  }
+
+  .close-button {
+    border: 0;
+    background: none;
+    display: none;
+    font-size: 24px;
+
+    &.visible {
+      display: block;
+
+      @media screen and (min-width: 860px) {
+        display: none;
+      }
+    }
   }
 
   .hamburgermenu-expanded {
@@ -224,19 +243,6 @@ a {
       &:hover {
         color: var(--mustard-yellow);
       }
-    }
-
-    .close-item {
-      align-self: flex-end;
-      .close-button:hover {
-        color: var(--mustard-yellow);
-      }
-    }
-
-    .close-button {
-      border: none;
-      background: none;
-      font-size: 1.5rem;
     }
 
     display: none;
