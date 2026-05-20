@@ -37,29 +37,40 @@ get_header(); ?>
         </section>
     </div>
 
-    <h2>hopp hopp</h2>
+    <!-- <h2>hopp hopp</h2>
     <?php
     foreach (get_categories() as $category) :
         echo $category->name;
     endforeach;
-    ?>
+    ?> -->
 
 
     <div class="gallery-and-above-background-forest">
 
 
         <div class="gallery">
-            <figure class="gallery__image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/bild1.jpg" alt="">
-            </figure>
 
-            <figure class="gallery__image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/bild2.jpg" alt="">
-            </figure>
+            <?php
 
-            <figure class="gallery__image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/bild3.jpg" alt="">
-            </figure>
+            $args = array(
+                'category_name' => 'illustrationer',
+                'post_type' => 'post',
+                'posts_per_page' => 3
+            );
+
+            $query = new WP_Query($args);
+
+            if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
+                    <!-- Bild 1 -->
+                    <figure class="gallery__image">
+                        <?php the_post_thumbnail() ?>
+                    </figure>
+
+            <?php endwhile;
+                wp_reset_postdata();
+            endif; ?>
+
 
             <div class="gallery__text-area">
                 <span class="gallery__text-area__text"> Här samlar jag mina målningar och teckningar. </span>
@@ -81,14 +92,14 @@ get_header(); ?>
     <div class="backgroundforest">
 
 
-        <h2>hej hej</h2>
+        <!-- <h2>hej hej</h2> -->
 
         <div class="articles">
 
             <?php
 
             $args = array(
-                'category_name' => 'varldar-och-karaktarer',
+                'category_name' => 'pa-gang',
                 'post_type' => 'post',
                 'posts_per_page' => 3
             );
@@ -134,7 +145,42 @@ get_header(); ?>
 
             <div class="project__cards">
 
-                <div class="project__card">
+
+                <?php
+
+                $args = array(
+                    'category_name' => 'varldar-och-karaktarer',
+                    'post_type' => 'post',
+                    'posts_per_page' => 3
+                );
+
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+
+                        <!-- Kort 1 -->
+
+                        <a href=" <?php the_permalink(); ?>">
+
+                            <div class="project__card">
+                                <figure class="project__card__image">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </figure>
+
+                                <h3 class="project__card__title"><?php the_title(); ?></h3>
+
+                                <a href="" class="button">Läs mer</a>
+                            </div>
+
+                        </a>
+
+                <?php endwhile;
+                    wp_reset_postdata();
+                endif; ?>
+
+
+
+                <!-- <div class="project__card">
                     <figure class="project__card__image">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/nalle.jpg" alt="">
                     </figure>
@@ -162,7 +208,7 @@ get_header(); ?>
                     <h3 class="project__card__title">Ingegerd och Hilma</h3>
 
                     <a href="" class="button">Läs mer</a>
-                </div>
+                </div> -->
 
             </div>
         </div>
