@@ -932,6 +932,12 @@ footer {
   }
 }
 
+.category-buttons {
+  padding: 1rem 0 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
 .pagang-cards {
   display: flex;
   gap: 2rem;
