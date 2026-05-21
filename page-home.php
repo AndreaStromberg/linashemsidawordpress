@@ -63,9 +63,12 @@ get_header(); ?>
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
                     <!-- Bild 1 -->
-                    <figure class="gallery__image">
-                        <?php the_post_thumbnail() ?>
-                    </figure>
+                    <a href="<?php the_permalink(); ?>">
+
+                        <figure class="gallery__image">
+                            <?php the_post_thumbnail() ?>
+                        </figure>
+                    </a>
 
             <?php endwhile;
                 wp_reset_postdata();
@@ -75,7 +78,7 @@ get_header(); ?>
             <div class="gallery__text-area">
                 <span class="gallery__text-area__text"> Här samlar jag mina målningar och teckningar. </span>
 
-                <a href="" class="button button--inverted">Till mina illustrationer</a>
+                <a href="<?php echo home_url('/illustrationer') ?>" class="button button--inverted">Till mina illustrationer</a>
             </div>
 
         </div>
