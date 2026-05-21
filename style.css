@@ -309,7 +309,8 @@ a {
 }
 
 .container {
-  margin-top: 100px;
+  /* padding-top: 100px; */
+
   /* min-height: 510rem;
   min-width: 70rem; */
 
@@ -318,7 +319,13 @@ a {
 
 .hero__image {
   margin-bottom: -1rem;
+  margin-top: 0;
   overflow-x: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .ingress {
@@ -837,8 +844,8 @@ footer {
 
 /* KONTAKTA MIG - UNDERSIDA */
 .contact-container {
-  margin-top: 100px;
-  padding-inline: 2rem;
+  /* margin-top: 100px; */
+  padding: 10rem 2rem 0rem;
   max-width: 800px;
   margin-inline: auto;
   height: 85vh;
@@ -901,8 +908,8 @@ footer {
 /* PÅ GÅNG - UNDERSIDOR */
 .pagang-content {
   min-height: 100px;
-  margin-top: 100px;
-  padding: 5rem 2rem;
+  /* margin-top: 100px; */
+  padding: 10rem 2rem;
 
   max-width: 60rem;
   margin-inline: auto;
