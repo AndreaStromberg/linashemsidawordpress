@@ -965,7 +965,7 @@ footer {
 .single-content,
 .page-content {
   min-height: 100px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   padding: 5rem 2rem;
 
   max-width: 60rem;
