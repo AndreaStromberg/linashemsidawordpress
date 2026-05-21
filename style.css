@@ -639,11 +639,12 @@ a {
   /* background-color: pink; */
 
   clip-path: polygon(0% 100%, 20% 75%, 40% 100%, 75% 25%, 100% 100%, 0% 100%);
+  margin-bottom: -10rem;
 }
 
 footer {
   /* padding: 10rem 4rem 4rem; */
-  margin-top: -10rem;
+  /* margin-top: -10rem; */
   color: var(--light-beige);
   background-color: var(--mustard-yellow);
   height: 150px;
@@ -984,4 +985,5 @@ footer {
 
 .footer__subpage {
   margin: 0;
+  /* margin-top: auto; */
 }

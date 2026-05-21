@@ -77,7 +77,6 @@ if ($omMigInnehall) :
 <?php endif; ?>
 
 
-
 <?php
 get_footer();
 ?>
