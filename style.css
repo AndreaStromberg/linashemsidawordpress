@@ -28,6 +28,10 @@ body {
   padding: 0;
 }
 
+body {
+  background-color: var(--light-beige);
+}
+
 figure {
   margin: 0;
 }
@@ -309,7 +313,7 @@ a {
 }
 
 .container {
-  /* padding-top: 100px; */
+  padding-top: 100px;
 
   /* min-height: 510rem;
   min-width: 70rem; */
@@ -809,6 +813,7 @@ footer {
 }
 
 .outer-container {
+  margin-top: 100px;
   min-height: 100vh;
   background: var(--light-beige);
 }
@@ -896,13 +901,13 @@ footer {
   font-weight: 400;
   font-family: var(--font-paragraphs);
   color: var(--dark-grey);
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .contact-left textarea {
   height: 140px;
   padding-top: 15px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .contact-inputs:focus {
