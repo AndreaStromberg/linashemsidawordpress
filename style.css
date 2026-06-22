@@ -142,9 +142,9 @@ a {
     color: var(--mustard-yellow);
   }
 
-  .menu__list-item--current a,
-  .current-menu-item a,
-  .current_page_item a {
+  .menu__list-item--current > a,
+  .current-menu-item > a,
+  .current_page_item > a {
     color: var(--mustard-yellow);
     font-weight: 900;
   }

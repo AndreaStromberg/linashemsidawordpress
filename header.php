@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Great+Vibes&family=Mynerve&display=swap"
         rel="stylesheet">
 
+    <!-- <link href="https://cdn.skypack.dev/@masonry-grid/vanilla" rel="stylesheet"> -->
     <!-- Styles -->
     <?php wp_head(); ?>
 
@@ -56,7 +57,6 @@
                 'container' => 'nav',
                 'container_class' => 'menu',
                 'menu_class' => 'menu__menulist'
-
             );
 
             wp_nav_menu($args);
@@ -95,11 +95,9 @@
 
             <?php
             $args = array(
-                'theme_location' => 'hamburgermenu-expanded',
+                'theme_location' => 'expandable_hamburger_menu',
                 'container' => 'ul',
                 'menu_class' => 'hamburgermenu-expanded'
-
-
             );
 
             wp_nav_menu($args);
