@@ -8,17 +8,15 @@ get_header();
         <h1>Världar och karaktärer</h1>
         <p class="pagang-ingress">
             Här kan du läsa om de olika världar och karaktärer som jag skapar
-
         </p>
 
-        <div class="pagang-cards">
+        <div class="pagang-cards" id="varldar-cards">
 
             <?php
-
             $args = array(
                 'category_name' => 'varldar-och-karaktarer',
                 'post_type' => 'post',
-                'posts_per_page' => 3
+                'posts_per_page' => 4
             );
 
             $query = new WP_Query($args);
@@ -53,12 +51,13 @@ get_header();
                 wp_reset_postdata();
             endif; ?>
 
-
-
         </div>
+
+        <?php if ($query->max_num_pages > 1) : ?>
+            <!-- Data attribut sparar information som JavaScript behöver -->
+            <button data-current-varldar-page="1" data-max-varldar-pages="<?php echo $query->max_num_pages; ?>" type="button" class="button" id="load-more-varldar">Visa mer</button>
+        <?php endif; ?>
     </div>
-
-
 </div>
 
 <?php

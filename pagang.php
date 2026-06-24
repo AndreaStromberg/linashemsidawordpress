@@ -18,23 +18,21 @@ get_header();
 
         </div>
 
-        <div class="pagang-cards">
+        <div class="pagang-cards" id="pagang-cards">
 
             <?php
-
             $args = array(
-                'category_name' => 'pa-gang',
-                'post_type' => 'post',
-                'posts_per_page' => 10
+                'category_name'     => 'pa-gang',
+                'post_type'         => 'post',
+                'posts_per_page'    => 6
             );
 
             $query = new WP_Query($args);
 
             if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-                    <a href="<?php the_permalink(); ?>">
-
-                        <article class="pagang-card card">
+                    <article class="pagang-card card">
+                        <a href="<?php the_permalink(); ?>">
                             <figure class="card__image">
                                 <?php the_post_thumbnail('large') ?>
                             </figure>
@@ -45,22 +43,25 @@ get_header();
 
                                     <h3 class=" card__heading"><?php the_title(); ?></h3>
 
-                                    <p class="card__exerpt"><?php the_excerpt(); ?>
-                                    </p>
+                                    <?php the_excerpt(); ?>
                                 </div>
 
-                                <a href="<?php the_permalink(); ?>" class="button">Läs mer</a>
-
+                                <button type="button" class="button">Läs mer</button>
 
                             </div>
-                        </article>
-                    </a>
+                        </a>
+                    </article>
 
             <?php endwhile;
                 wp_reset_postdata();
             endif; ?>
 
         </div>
+        <?php if ($query->max_num_pages > 1) : ?>
+            <!-- Data attribut sparar information som JavaScript behöver -->
+            <button data-current-pagang-page="1" data-max-pagang-pages="<?php echo $query->max_num_pages; ?>" type="button" class="button" id="load-more-pagang">Visa mer</button>
+        <?php endif; ?>
+
     </div>
 
 
