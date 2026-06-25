@@ -11,14 +11,14 @@ get_header();
 
         </p>
 
-        <div class="pagang-cards">
+        <div class="pagang-cards" id="texter-cards">
 
             <?php
 
             $args = array(
                 'category_name' => 'texter',
                 'post_type' => 'post',
-                'posts_per_page' => 3
+                'posts_per_page' => 5
             );
 
             $query = new WP_Query($args);
@@ -54,9 +54,12 @@ get_header();
             endif; ?>
 
         </div>
+
+        <?php if ($query->max_num_pages > 1) : ?>
+            <!-- Data attribut sparar information som JavaScript behöver -->
+            <button data-current-texter-page="1" data-max-texter-pages="<?php echo $query->max_num_pages; ?>" type="button" class="button" id="load-more-texter">Visa mer</button>
+        <?php endif; ?>
     </div>
-
-
 </div>
 
 

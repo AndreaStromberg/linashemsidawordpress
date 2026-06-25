@@ -70,6 +70,22 @@ function show_more_varldar()
 }
 add_action('wp_enqueue_scripts', 'show_more_varldar');
 
+function show_more_arbetsprocesser()
+{
+    if (is_page('arbetsprocesser')) {
+        wp_enqueue_script('show-more-arbetsprocesser', get_template_directory_uri() . '/arbetsprocesser.js', array(), '1.0', true);
+    }
+}
+add_action('wp_enqueue_scripts', 'show_more_arbetsprocesser');
+
+function show_more_texter()
+{
+    if (is_page('texter')) {
+        wp_enqueue_script('show-more-texter', get_template_directory_uri() . '/texter.js', array(), '1.0', true);
+    }
+}
+add_action('wp_enqueue_scripts', 'show_more_texter');
+
 function prepareImageData($attachment_id)
 {
     $uploads_baseurl = wp_upload_dir()['baseurl'];
@@ -240,3 +256,108 @@ function load_more_varldar_handler()
 add_action('wp_ajax_load_more_varldar', 'load_more_varldar_handler');
 // För utloggade besökare
 add_action('wp_ajax_nopriv_load_more_varldar', 'load_more_varldar_handler');
+
+
+function load_more_arbetsprocesser_handler()
+{
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+
+    $args = array(
+        'category_name'     =>      'arbetsprocesser',
+        'post_type'         =>      'post',
+        'paged'             =>      $page,
+        'posts_per_page'    =>      5
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+            echo '<article class="pagang-card card">';
+            echo '<a href="';
+            echo the_permalink();
+            echo '">';
+
+            echo '<figure class="card__image">';
+            echo the_post_thumbnail('large');
+            echo '</figure>';
+
+            echo '<div class="card__content">';
+            echo '<div class="card__text">';
+
+            echo '<h3 class="card__heading">';
+            echo the_title();
+            echo '</h3>';
+
+            echo the_excerpt();
+            echo '</div>';
+
+            echo '<button type="button" class="button">';
+            echo 'Läs mer';
+            echo '</button>';
+
+            echo '</div>';
+            echo '</a>';
+            echo '</article>';
+
+        endwhile;
+    endif;
+    wp_reset_postdata();
+
+    // Det avbryter PHP-körningen för AJAX
+    wp_die();
+}
+add_action('wp_ajax_load_more_arbetsprocesser', 'load_more_arbetsprocesser_handler');
+// För utloggade besökare
+add_action('wp_ajax_nopriv_load_more_arbetsprocesser', 'load_more_arbetsprocesser_handler');
+
+function load_more_texter_handler()
+{
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+
+    $args = array(
+        'category_name'     =>      'texter',
+        'post_type'         =>      'post',
+        'paged'             =>      $page,
+        'posts_per_page'    =>      5
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+            echo '<article class="pagang-card card">';
+            echo '<a href="';
+            echo the_permalink();
+            echo '">';
+
+            echo '<figure class="card__image">';
+            echo the_post_thumbnail('large');
+            echo '</figure>';
+
+            echo '<div class="card__content">';
+            echo '<div class="card__text">';
+
+            echo '<h3 class="card__heading">';
+            echo the_title();
+            echo '</h3>';
+
+            echo the_excerpt();
+            echo '</div>';
+
+            echo '<button type="button" class="button">';
+            echo 'Läs mer';
+            echo '</button>';
+
+            echo '</div>';
+            echo '</a>';
+            echo '</article>';
+
+        endwhile;
+    endif;
+    wp_reset_postdata();
+
+    // Det avbryter PHP-körningen för AJAX
+    wp_die();
+}
+add_action('wp_ajax_load_more_texter', 'load_more_texter_handler');
+// För utloggade besökare
+add_action('wp_ajax_nopriv_load_more_texter', 'load_more_texter_handler');

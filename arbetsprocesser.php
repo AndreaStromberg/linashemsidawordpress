@@ -11,14 +11,14 @@ get_header();
 
         </p>
 
-        <div class="pagang-cards">
+        <div class="pagang-cards" id="arbetsprocesser-cards">
 
             <?php
 
             $args = array(
                 'category_name' => 'arbetsprocesser',
                 'post_type' => 'post',
-                'posts_per_page' => 3
+                'posts_per_page' => 5
             );
 
             $query = new WP_Query($args);
@@ -55,6 +55,11 @@ get_header();
 
 
         </div>
+
+        <?php if ($query->max_num_pages > 1) : ?>
+            <!-- Data attribut sparar information som JavaScript behöver -->
+            <button data-current-arbetsprocesser-page="1" data-max-arbetsprocesser-pages="<?php echo $query->max_num_pages; ?>" type="button" class="button" id="load-more-arbetsprocesser">Visa mer</button>
+        <?php endif; ?>
     </div>
 
 

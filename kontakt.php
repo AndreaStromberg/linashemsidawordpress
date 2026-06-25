@@ -21,8 +21,7 @@ get_header();
 
             <?php endif; ?>
 
-
-            <input type="hidden" name="access_key" value="7c0c4de4-1e73-4f46-b67f-645fa27a7996">
+            <input type="hidden" name="access_key" value="<?php echo WEB3FORMS_ACCESS_KEY ?>">
             <input type="text" name="name" placeholder="Ditt namn" class="contact-inputs" required>
             <input type="email" name="email" placeholder="Din epostadress" class="contact-inputs" required>
 
