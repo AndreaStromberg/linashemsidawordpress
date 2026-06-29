@@ -173,7 +173,8 @@ get_header(); ?>
                                 <h3 class="project__card__title"><?php the_title(); ?></h3>
 
                                 <p><?php the_excerpt() ?></p>
-                                <a href="" class="button">Läs mer</a>
+                                <a href="<?php the_permalink(); ?>" class="button">Läs mer</a>
+
 
                             </div>
 
