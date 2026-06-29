@@ -818,6 +818,22 @@ footer {
   background: var(--light-beige);
 }
 
+#load-more-illustrations,
+#load-more-pagang,
+#load-more-arbetsprocesser,
+#load-more-texter,
+#load-more-varldar {
+  display: block;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: fit-content; */
+
+  line-height: 1;
+  padding: 0.5em 1 em;
+  glyph-orientation-vertical: middle;
+}
+
 .illustrationer__content {
   min-height: 100px;
   margin-top: 100px;
@@ -835,18 +851,6 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     padding: 5rem 0;
-  }
-
-  #load-more-illustrations {
-    display: block;
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: fit-content; */
-
-    line-height: 1;
-    padding: 0.5em 1 em;
-    glyph-orientation-vertical: middle;
   }
 
   @media screen and (max-width: 1000px) {

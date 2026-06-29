@@ -11,7 +11,8 @@ add_theme_support('post-thumbnails');
 
 function linashemsida_styles_and_scripts()
 {
-    wp_enqueue_style('main-style', get_stylesheet_uri(), array(), '1.0');
+
+    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.css', array(), '1.0');
 }
 
 add_action('wp_enqueue_scripts', 'linashemsida_styles_and_scripts');
@@ -34,14 +35,14 @@ add_action('after_setup_theme', 'linashemsida_register_menus');
 
 function expandable_menu()
 {
-    wp_enqueue_script('expandable-menu', get_template_directory_uri() . '/expandableMenu.js', array(), '1.0', true);
+    wp_enqueue_script('expandable-menu', get_template_directory_uri() . '/js/expandableMenu.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'expandable_menu');
 
 function masonry()
 {
     if (is_page('illustrationer')) {
-        wp_enqueue_script_module('image-masonry', get_theme_file_uri('/masonry.js'));
+        wp_enqueue_script_module('image-masonry', get_theme_file_uri('/js/masonry.js'));
     }
 }
 add_action('wp_enqueue_scripts', 'masonry');
@@ -49,7 +50,7 @@ add_action('wp_enqueue_scripts', 'masonry');
 function show_more_illustrations()
 {
     if (is_page('illustrationer')) {
-        wp_enqueue_script('show-more-pagang_handler', get_template_directory_uri() . '/illustrationer.js', array(), '1.0', true);
+        wp_enqueue_script('show-more-pagang_handler', get_template_directory_uri() . '/js/illustrationer.js', array(), '1.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'show_more_illustrations');
@@ -57,7 +58,7 @@ add_action('wp_enqueue_scripts', 'show_more_illustrations');
 function show_more_pagang()
 {
     if (is_page('pa-gang')) {
-        wp_enqueue_script('show-more-pagang', get_template_directory_uri() . '/pagang.js', array(), '1.0', true);
+        wp_enqueue_script('show-more-pagang', get_template_directory_uri() . '/js/pagang.js', array(), '1.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'show_more_pagang');
@@ -65,7 +66,7 @@ add_action('wp_enqueue_scripts', 'show_more_pagang');
 function show_more_varldar()
 {
     if (is_page('varldar-och-karaktarer')) {
-        wp_enqueue_script('show-more-varldar', get_template_directory_uri() . '/varldarOchKaraktarer.js', array(), '1.0', true);
+        wp_enqueue_script('show-more-varldar', get_template_directory_uri() . '/js/varldarOchKaraktarer.js', array(), '1.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'show_more_varldar');
@@ -73,7 +74,7 @@ add_action('wp_enqueue_scripts', 'show_more_varldar');
 function show_more_arbetsprocesser()
 {
     if (is_page('arbetsprocesser')) {
-        wp_enqueue_script('show-more-arbetsprocesser', get_template_directory_uri() . '/arbetsprocesser.js', array(), '1.0', true);
+        wp_enqueue_script('show-more-arbetsprocesser', get_template_directory_uri() . '/js/arbetsprocesser.js', array(), '1.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'show_more_arbetsprocesser');
@@ -81,7 +82,7 @@ add_action('wp_enqueue_scripts', 'show_more_arbetsprocesser');
 function show_more_texter()
 {
     if (is_page('texter')) {
-        wp_enqueue_script('show-more-texter', get_template_directory_uri() . '/texter.js', array(), '1.0', true);
+        wp_enqueue_script('show-more-texter', get_template_directory_uri() . '/js/texter.js', array(), '1.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'show_more_texter');
@@ -115,7 +116,7 @@ function load_more_illustrations_handler()
         'category_name'     =>      'illustrationer',
         'post_type'         =>      'post',
         'paged'             =>      $page,
-        'posts_per_page'    =>      3
+        'posts_per_page'    =>      6
     );
 
     $query = new WP_Query($args);
