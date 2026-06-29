@@ -172,7 +172,9 @@ get_header(); ?>
 
                                 <h3 class="project__card__title"><?php the_title(); ?></h3>
 
+                                <p><?php the_excerpt() ?></p>
                                 <a href="" class="button">Läs mer</a>
+
                             </div>
 
                         </a>
