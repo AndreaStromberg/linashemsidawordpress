@@ -505,7 +505,7 @@ a {
 .backgroundforest {
   margin-top: -149px;
   padding-top: 150px;
-  background-image: url("images/herobild.jpg");
+  background-image: url("../images/herobild.jpg");
 
   /* background: linear-gradient(rgba(47, 58, 46, 0.7), rgba(47, 58, 46, 0.7)),
     url(images/bakgrundsbild.jpg); */
