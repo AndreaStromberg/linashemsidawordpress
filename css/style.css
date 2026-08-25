@@ -706,11 +706,15 @@ footer {
   margin-top: 100px;
   background-color: var(--light-beige);
   padding: 2rem 3rem;
+  /* max-width: 60rem; */
+  max-width: 800px;
+  margin-inline: auto;
 }
 
 .om-mig__picture-heading-ingress {
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  /* grid-template-columns: 2fr 3fr; */
+  grid-template-columns: 1fr 1fr;
 
   gap: 2rem;
   max-width: 60rem;
@@ -739,8 +743,9 @@ footer {
 }
 
 .om-mig__text {
-  max-width: 60rem;
-  margin-left: auto;
+  /* max-width: 60rem; */
+  max-width: 800px;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -946,7 +951,12 @@ footer {
   padding: 10rem 2rem;
 
   max-width: 60rem;
+  /* max-width: 800px; */
   margin-inline: auto;
+
+  .pagang-ingress {
+    max-width: 600px;
+  }
 
   p {
     font-size: 20px;
@@ -1017,7 +1027,8 @@ footer {
   /* margin-top: 100px; */
   padding: 5rem 2rem;
 
-  max-width: 60rem;
+  /* max-width: 60rem; */
+  max-width: 800px;
   margin-inline: auto;
 
   /* figure {
